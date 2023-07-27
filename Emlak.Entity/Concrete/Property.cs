@@ -28,10 +28,9 @@ namespace Emlak.Entity.Concrete
         public string Description { get; set; } = string.Empty;
         //public DateTime CreatedDate { get; set; }
 
-        //public int AgentID { get; set; }
 
-
-        //public Agent Agent { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? AgentId { get; set; }
         //public ICollection<Amenity>? Amenities { get; set; }
         //public ICollection<PropertyImage> PropertyImages { get; set; }
     }

@@ -1,7 +1,10 @@
 ﻿using Emlak.DAL.Abstract;
+
 using Emlak.Entity.Concrete;
 using Emlak.Entity.DBSettings;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using SharpCompress.Writers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +15,13 @@ namespace Emlak.DAL.Concrete
 {
     public class PropertyService : IPropertyService
     {
-        private readonly IMongoCollection<Property> _property;
+    
+        private readonly IMongoCollection<Property> _property;      
 
         public PropertyService(IDbSettings dbSettings, IMongoClient mongoClient)
         {
             var db = mongoClient.GetDatabase(dbSettings.DatabaseName);
-            _property = db.GetCollection<Property>(dbSettings.PropertyCollectionName);
+            _property = db.GetCollection<Property>(dbSettings.PropertyCollectionName);        
         }
         public Property Add(Property property)
         {
@@ -38,7 +42,7 @@ namespace Emlak.DAL.Concrete
         public List<Property> GetList()
         {
             return _property.Find(x => true).ToList();
-        }
+        }       
 
         public void Update(string id, Property property)
         {

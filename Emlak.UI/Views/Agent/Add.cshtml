@@ -1,0 +1,31 @@
+﻿@model Emlak.UI.Models.AgentVMs.CreateAgentVM
+
+
+<form asp-action="Add">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" style="color:black !important" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname" class="control-label"></label>
+        <input asp-for="Surname" class="form-control" style="color:black !important" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" style="color:black !important" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phonenumber" class="control-label"></label>
+        <input asp-for="Phonenumber" class="form-control" style="color:black !important" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl" class="control-label"></label>
+        <input asp-for="ImageUrl" class="form-control" style="color:black !important" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>

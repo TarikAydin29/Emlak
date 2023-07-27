@@ -22,6 +22,7 @@ namespace Emlak.Api.Controllers
         public IActionResult GetList()
         {
             var values =  propertyService.GetList();
+         
             return Ok(values);
         }
 
@@ -39,7 +40,7 @@ namespace Emlak.Api.Controllers
 
         [HttpPost]
         public IActionResult Add(Property property)
-        {
+        {  
             propertyService.Add(property);
             return CreatedAtAction("GetList", new { id = property.PropertyID }, property);
         }

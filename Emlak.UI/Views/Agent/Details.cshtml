@@ -1,0 +1,65 @@
+﻿@model Emlak.UI.Models.AgentVMs.AgentWithPropertiesVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Details</h1>
+
+<div>
+    <h4>Agent</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.AgentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.AgentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.Phonenumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.Phonenumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.ImageUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.ImageUrl)
+        </dd>
+        @foreach (var item in Model.Properties)
+        {
+            <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">@item.PropertyID</div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Price</h5>
+                    <p class="card-text">@item.Adress - @item.Description</p>
+                </div>
+            </div>
+        }
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

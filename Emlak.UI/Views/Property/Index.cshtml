@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Emlak.UI.Models.PropertyVMs.PropertListVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Add">İlan Ekle</a>
+</p>
+<table class="table" >
+    <thead>
+        <tr style="color:black !important">
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.PropertyID)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Baths)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th style="color:black !important">
+                @Html.DisplayNameFor(model => model.AgentId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.PropertyID)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Rooms)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Baths)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+                <td style="color:black !important">
+                @Html.DisplayFor(modelItem => item.AgentId)
+            </td>
+                <td style="color:black !important">
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

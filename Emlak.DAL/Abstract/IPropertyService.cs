@@ -1,4 +1,6 @@
-﻿using Emlak.Entity.Concrete;
+﻿
+using Emlak.Entity.Concrete;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,6 @@ namespace Emlak.DAL.Abstract
         Property GetById(string id);
         Property Add(Property property);
         void Update(string id, Property property);
-        void Delete(string id);
+        void Delete(string id);       
     }
 }
