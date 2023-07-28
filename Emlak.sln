@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emlak.DAL", "Emlak.DAL\Emla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emlak.Entity", "Emlak.Entity\Emlak.Entity.csproj", "{15F87090-DD75-42C0-8C53-137212780E12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.DTO", "Emlak.DTO\Emlak.DTO.csproj", "{BE120B07-E84C-4A98-BD36-7570071F37A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{15F87090-DD75-42C0-8C53-137212780E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F87090-DD75-42C0-8C53-137212780E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F87090-DD75-42C0-8C53-137212780E12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE120B07-E84C-4A98-BD36-7570071F37A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE120B07-E84C-4A98-BD36-7570071F37A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE120B07-E84C-4A98-BD36-7570071F37A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE120B07-E84C-4A98-BD36-7570071F37A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

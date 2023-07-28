@@ -2,8 +2,7 @@
     Layout = null;
 }
 
-
-
+@RenderSection("Scripts", required: false)
 <head>
     <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,37 +31,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/adminlayout/js/morris.js"></script>
 </head>
 <body>
-    <section id="container">
+    <div id="container">
         <!--header start-->
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
                 <a href="index.html" class="logo">
-                    VISITORS
+                    Danışman Yönetim Paneli
                 </a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
                 </div>
             </div>
             <!--logo end-->
+            @await Component.InvokeAsync("_UserInfoPartial")
 
-            <div class="top-nav clearfix">
-                <ul class="nav pull-right top-menu">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="/adminlayout/images/2.png">
-                            <span class="username">John Doe</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
         </header>
         <!--header end-->
         <!--sidebar start-->
@@ -170,25 +153,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </aside>
         <!--sidebar end-->
         <!--main content start-->
-        <section id="main-content">
-            <section class="wrapper">
+        <div id="main-content">
+         
+            <div class="wrapper">
 
                 @RenderBody()
 
+            </div>
 
 
 
 
-            </section>
 
-        </section>
+        
+
+        </div>
         <!--main content end-->
-    </section>
-    <script src="/adminlayout/js/bootstrap.js"></script>
-    <script src="/adminlayout/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="/adminlayout/js/scripts.js"></script>
-    <script src="/adminlayout/js/jquery.slimscroll.js"></script>
-    <script src="/adminlayout/js/jquery.nicescroll.js"></script>
+    </div>
+    <script src="~/adminlayout/js/bootstrap.js"></script>
+    <script src="~/adminlayout/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/adminlayout/js/scripts.js"></script>
+    <script src="~/adminlayout/js/jquery.slimscroll.js"></script>
+    <script src="~/adminlayout/js/jquery.nicescroll.js"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="~/adminlayout/js/jquery.scrollTo.js"></script>
     <!-- morris JavaScript -->

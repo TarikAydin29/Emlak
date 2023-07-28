@@ -26,6 +26,8 @@ namespace Emlak.Entity.Concrete
         public decimal Price { get; set; }
         [BsonElement("description")]
         public string Description { get; set; } = string.Empty;
+        [BsonElement("imageurl")]
+        public string ImageUrl { get; set; } = string.Empty;
         //public DateTime CreatedDate { get; set; }
 
 

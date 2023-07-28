@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Emlak.DAL\Emlak.DAL.csproj" />
+    <ProjectReference Include="..\Emlak.DTO\Emlak.DTO.csproj" />
     <ProjectReference Include="..\Emlak.Entity\Emlak.Entity.csproj" />
   </ItemGroup>
 

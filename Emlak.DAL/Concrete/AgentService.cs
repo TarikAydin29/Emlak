@@ -37,6 +37,11 @@ namespace Emlak.DAL.Concrete
             return _agent.Find(x => x.AgentId == id).FirstOrDefault();
         }
 
+        public Agent GetByName(string name)
+        {
+            return _agent.Find(x => x.Name == name).FirstOrDefault();
+        }
+
         public List<Agent> GetList()
         {
             return _agent.Find(x => true).ToList();

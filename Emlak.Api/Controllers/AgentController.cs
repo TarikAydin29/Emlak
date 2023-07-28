@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Emlak.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AgentController : ControllerBase
     {
@@ -70,6 +70,22 @@ namespace Emlak.Api.Controllers
             }
             agentService.Delete(agent.AgentId);
             return Ok($"{agent.AgentId} ID ye sahip danışman silindi.");
+        }
+
+
+        [HttpGet("{name}")]
+        public IActionResult GetByName(string name)
+        {
+            var agent = agentService.GetByName(name);
+            if (agent == null)
+            {
+                return NotFound("Danışman bulunamadı");
+            }
+            if (agent.Properties != null)
+            {
+
+            }
+            return Ok(agent);
         }
     }
 }

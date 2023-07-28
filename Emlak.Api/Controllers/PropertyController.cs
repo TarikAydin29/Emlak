@@ -36,7 +36,16 @@ namespace Emlak.Api.Controllers
             }
             return Ok(prop);
         }
-
+        [HttpGet("{id}")]
+        public IActionResult GetByAgentIdList(string id)
+        {
+            var prop = propertyService.GetByAgentIdList(id);
+            if (prop == null)
+            {
+                return NotFound("Mülk bulunamadı");
+            }
+            return Ok(prop);
+        }
 
         [HttpPost]
         public IActionResult Add(Property property)
@@ -67,6 +76,18 @@ namespace Emlak.Api.Controllers
             }
             propertyService.Delete(prop.PropertyID);
             return Ok($"{prop.PropertyID} ID ye sahip mülk silindi.");
+        }
+
+        [HttpGet("{adress}")]
+        public IActionResult FilterByAdress(string adress)
+        {
+            var prop = propertyService.FilterProperty(adress);
+            if (prop == null)
+            {
+                return NotFound("Mülk bulunamadı");
+            }
+            
+            return Ok(prop);
         }
     }
 }

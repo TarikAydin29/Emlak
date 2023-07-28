@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Emlak.UI.Controllers
 {
-    public class AgentController : Controller
+    public class AdminAgentController : Controller
     {
         private readonly IHttpClientFactory httpClient;
 
-        public AgentController(IHttpClientFactory httpClient)
+        public AdminAgentController(IHttpClientFactory httpClient)
         {
             this.httpClient = httpClient;
         }
@@ -19,7 +19,7 @@ namespace Emlak.UI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = httpClient.CreateClient();
-            var responseMessaege = await client.GetAsync("https://localhost:7090/api/Agent");
+            var responseMessaege = await client.GetAsync("https://localhost:7090/api/Agent/GetList");
             if (responseMessaege.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessaege.Content.ReadAsStringAsync();
@@ -39,7 +39,7 @@ namespace Emlak.UI.Controllers
             var clientt = httpClient.CreateClient();
             var jsonData = JsonConvert.SerializeObject(vm);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await clientt.PostAsync("https://localhost:7090/api/Agent", stringContent);
+            var responseMessage = await clientt.PostAsync("https://localhost:7090/api/Agent/Add", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -54,7 +54,7 @@ namespace Emlak.UI.Controllers
             AgentWithPropertiesVM vm = new AgentWithPropertiesVM();
 
             var client = httpClient.CreateClient();
-            var responseMessaege = await client.GetAsync($"https://localhost:7090/api/Agent/{id}");
+            var responseMessaege = await client.GetAsync($"https://localhost:7090/api/Agent/GetById/{id}");
             if (responseMessaege.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessaege.Content.ReadAsStringAsync();

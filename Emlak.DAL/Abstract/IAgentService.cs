@@ -11,6 +11,7 @@ namespace Emlak.DAL.Abstract
     {
         List<Agent> GetList();
         Agent GetById(string id);
+        Agent GetByName(string name);
         Agent Add(Agent agent);
         void Update(string id, Agent agent);
         void Delete(string id);

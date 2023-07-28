@@ -10,7 +10,7 @@
 <p>
     <a asp-action="Add">İlan Ekle</a>
 </p>
-<table class="table" >
+<table class="table">
     <thead>
         <tr style="color:black !important">
             <th style="color:black !important">
@@ -41,38 +41,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.PropertyID)
-            </td>
+                    @Html.DisplayFor(modelItem => item.PropertyID)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Adress)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Rooms)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Rooms)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Baths)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Baths)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Area)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
                 <td style="color:black !important">
-                @Html.DisplayFor(modelItem => item.AgentId)
-            </td>
+                    @Html.DisplayFor(modelItem => item.AgentId)
+                </td>
                 <td style="color:black !important">
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+                    @Html.ActionLink("Güncelle", "Update", new {id=item.PropertyID },new {@class="btn btn-outline-success"}) |
+                    @Html.ActionLink("Detaylar", "Details", new { id=item.PropertyID },new {@class="btn btn-outline-warning"}) |
+                    @Html.ActionLink("Sil", "Delete", new { id=item.PropertyID},new {@class="btn btn-outline-danger"})
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

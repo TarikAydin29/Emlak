@@ -1,0 +1,249 @@
+﻿@model Emlak.UI.Models.PropertyVMs.PropertyDetailsVM
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+<section class="w3l-blog post-content py-5">
+    <div class="container py-lg-4 py-md-3 py-2">
+        <div class="inner mb-4">
+            <ul class="blog-single-author-date align-items-center">
+                <li>
+                    <div class="listing-category"><span>Buy</span><span>Rent</span></div>
+                </li>
+            </ul>
+        </div>
+        <div class="post-content">
+            <h2 class="title-single">@Model.Description </h2>
+        </div>
+        <div class="blo-singl mb-4">
+            <ul class="blog-single-author-date align-items-center">
+                <li>
+                    <p>@Model.Adress</p>
+                </li>
+                <li><span class="fa fa-bed"></span>@Model.Rooms Oda</li>
+                <li><span class="fa fa-bath"></span>@Model.Baths Banyo</li>
+                <li><span class="fa fa-share-square-o"></span> @Model.Area m</li>
+            </ul>
+            <ul class="share-post">
+                <a href="#url" class="cost-estate m-o">@Model.Price ₺</a>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 w3l-news">
+                <div class="blog-single-post">
+                    <div class="single-post-image mb-5">
+                        <div class="owl-blog owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="card">
+                                    <img src="@Model.ImageUrl" class="img-fluid radius-image" alt="image">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <img src="assets/images/p2.jpg" class="img-fluid radius-image" alt="@Model.Adress">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="single-post-content">
+                        <h3 class="post-content-title mb-3">Description</h3>
+                        <p class="mb-4">
+                            Lorem model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+                            infancy. Various
+                            versions have evolved over the years, sometimes by accident, sometimes on purpose
+                            injected humour and the like.
+                        </p>
+                        <p class="mb-4">
+                            When you decide to put your business online it is a little bet tricky step
+                            for novice
+                            computer users because they want to keep data safe & secure.
+                            This problem developed from companies which did not take security seriously. Lorem ipsum
+                            dolor sit amet elit.
+                        </p>
+                        <div class="single-bg-white">
+                            <h3 class="post-content-title mb-4">Property detail</h3>
+                            <ul class="details-list">
+                                <li><strong>Property id :</strong> PRPT12345 </li>
+                                <li><strong>Property size :</strong> 1200sqft </li>
+                                <li><strong>Rooms :</strong> 2 </li>
+                                <li><strong>Bedrooms :</strong> 5 </li>
+                                <li><strong>Bathrooms :</strong> 2 </li>
+                                <li><strong>Exterior material :</strong> Brick </li>
+                                <li><strong>Structure type :</strong> Wood </li>
+                                <li><strong>Garage size :</strong> 15 cars </li>
+                                <li><strong>Garages :</strong> 15 </li>
+                                <li><strong>Property Price :</strong> $ 750 </li>
+                                <li><strong>Built Year :</strong> 2018 </li>
+                                <li><strong>Avaiable from :</strong> Aug 2019 </li>
+                            </ul>
+                        </div>
+                        <div class="single-bg-white">
+                            <h3 class="post-content-title mb-4">Amenities</h3>
+                            <ul class="details-list">
+                                <li><strong>Air Conditioning </strong></li>
+                                <li><strong>Buil-In Wardrobes </strong> </li>
+                                <li><strong>Dishwasher</strong> </li>
+                                <li><strong>Floor Coverings </strong> </li>
+                                <li><strong>Medical / Clinic </strong> </li>
+                                <li><strong>Fencing</strong> </li>
+                                <li><strong>Internet and wifi </strong> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
+                <aside class="sidebar">
+
+                    <!-- Popular Post Widget-->
+                    <div class="sidebar-widget popular-posts">
+                        <div class="sidebar-title">
+                            <h4>Contact an Agent</h4>
+                        </div>
+
+                        <article class="post">
+                            <figure class="post-thumb">
+                                <img src="@Model.Agent.ImageUrl" class="radius-image" alt="">
+                            </figure>
+                            <div class="text mb-0">
+                                <a href="#blog-single">
+                                    @Model.Agent.Name @Model.Agent.Surname
+                                </a>
+                                <div class="post-info">@Model.Agent.Phonenumber</div>
+                                <div class="post-info">@Model.Agent.Email</div>
+                            </div>
+                        </article>
+                        <button type="submit" class="btn btn-primary btn-style w-100">Request details</button>
+                    </div>
+
+
+                    <!-- Popular Post Widget-->
+                    <div class="sidebar-widget popular-posts">
+                        <div class="sidebar-title">
+                            <h4>Popular Post</h4>
+                        </div>
+
+                        <article class="post">
+                            <figure class="post-thumb">
+                                <img src="assets/images/l1.jpg" class="radius-image" alt="">
+                            </figure>
+                            <div class="text">
+                                <a href="#blog-single">
+                                    Why we are the best in the business
+                                </a>
+                                <div class="post-info">Sep 09, 2020 - 2 comments</div>
+                            </div>
+                        </article>
+
+                        <article class="post">
+                            <figure class="post-thumb">
+                                <img src="assets/images/l2.jpg" class="radius-image" alt="">
+                            </figure>
+                            <div class="text">
+                                <a href="#blog-single">
+                                    Build your next landing page.
+                                </a>
+                                <div class="post-info">Sep 09, 2020 - 2 comments</div>
+                            </div>
+                        </article>
+
+                        <article class="post">
+                            <figure class="post-thumb">
+                                <img src="assets/images/l3.jpg" class="radius-image" alt="">
+                            </figure>
+                            <div class="text">
+                                <a href="#blog-single">
+                                    Simply the best. Better than the rest.
+                                </a>
+                                <div class="post-info">Sep 10, 2020 - 2 comments</div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <h4>PropertyDetailsVM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropertyID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rooms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rooms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Baths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Baths)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AgentId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

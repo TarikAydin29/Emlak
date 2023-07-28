@@ -11,6 +11,13 @@ namespace Emlak.Entity.Concrete
 
     public class Agent
     {
+
+        public Agent()
+        {
+            this.PropertyIds = new HashSet<string>();
+            this.Properties = new HashSet<Property>();
+        }
+
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string AgentId { get; set; } = string.Empty;
@@ -26,7 +33,8 @@ namespace Emlak.Entity.Concrete
         public string ImageUrl { get; set; } = string.Empty;
 
 
-      
-        public List<Property>? Properties { get; set; } 
+       
+        public ICollection<string>? PropertyIds { get; set; }
+        public ICollection<Property>? Properties { get; set; }
     }
 }
